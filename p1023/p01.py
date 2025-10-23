@@ -1,0 +1,6 @@
+print("안녕")
+print("Hello word!!!")
+print("안녕"*3)
+print("-"*30)
+print("프로그램연산")
+print("-"*30)
