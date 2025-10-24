@@ -40,7 +40,14 @@ print(int(n))   #0이 제외된 3만 출력
 
 # 991001-3111111
 jumin = input("주민번호를 입력하세요:")
-if(jumin[2:4]==str(now.month)):
+if(int(jumin[2:4])==now.month):
     print("이벤트 대상입니다.")
 else:
     print("이벤트 대상이 아닙니다.")
+
+str1 = "abcdefg"
+# [시작번호:끝번호:스탭]
+print(str1[1:6:2])  #bdf
+print(str1[:5])     #abcde
+print(str1[5:2:-1]) #fed(거꾸로 출력)
+print(str1[::-1])   #gfedcba(이 정도만 알아도 됨)
