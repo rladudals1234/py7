@@ -30,29 +30,35 @@
 # while
 stu_list = []
 while True:
-    print("[ 학생성적 프로그램 ]")
+    print("[ 학생성적프로그램 ]")
     print("1. 학생성적입력")
     print("2. 학생성적출력")
     print("3. 학생성적수정")
     print("0. 프로그램종료")
     print("-"*20)
-    no = int(input("원하는 번호를 입력하세요:"))
-    if no == 0:
-        print("프로그램종료")
+    choice = int(input("원하는 번호를 입력하세요."))
+    # choice == 0 비교
+    if choice==0:
         break
-    elif no == 1:
+    elif choice==1:
         # 학생성적입력
         print("[ 학생성적입력 ]")
-        strs = ['이름', '국어', '영어', '수학']
-        stu_list = [input(f"{strs[0]}을 입력하세요:")]
-        scores = [int(input(f"{subject} 점수를 입력하세요:")) for subject in strs[1:]]
-        total = sum(scores)
-        stu_list += scores + [total, total / len(scores)]
-        print(stu_list)
-    elif no == 2:
-        # 학생성적출력
-        print("[ 학생성적출력 ]")
-    elif no == 3:
-        # 학생성적수정
-        print("[ 학생성적수정 ]")
+        name = input("이름을 입력하세요.")
+        kor = int(input("국어점수를 입력하세요. "))
+        eng = int(input("영어점수를 입력하세요. "))
+        math = int(input("수학점수를 입력하세요. "))
+        total = kor+eng+math
+        avg = total/3
+        stu_list.append([name,kor,eng,math,total,avg])
+
+        print("이름\t국어\t영어\t수학\t합계\t평균\t")
+        print("-"*50)
+        # [ 
+        #    ['홍길동',kor,eng,math,total,avg],
+        #    ['유관순',kor,eng,math,total,avg]
+        # ]
+        print("{}\t{}\t{}\t{}\t{}\t{:.2f}\t".format(name,kor,eng,math,total,avg))
     print()
+
+# while 종료후
+print(stu_list)
