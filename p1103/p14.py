@@ -12,6 +12,7 @@ count = 0
 my_lottos = []
 for i in range(5):
     my_lottos.append(random.sample(range(1,46),6))
+print("-"*50)
 print(" [ 나의 랜덤 로또 번호 ]")
 # 입력한 my숫자 번호
 for my_lotto in my_lottos:
